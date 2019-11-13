@@ -1,5 +1,3 @@
-module github.com/rdc/netflix-conductor-client
+module github.com/rdc-lda/netflix-conductor-go-client
 
-go 1.12
-
-require github.com/netflix/conductor/client/go v0.0.0-20191108001200-27ab532d2f62
+require golang.org/x/tools v0.0.0-20191113163402-bc1376d635b8 // indirect

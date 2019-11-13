@@ -16,7 +16,7 @@ package sample
 import (
 	"log"
 
-	"github.com/rdc/netflix-conductor-client/task"
+	"github.com/rdc-lda/netflix-conductor-go-client/task"
 )
 
 // Implementation for "task_2"

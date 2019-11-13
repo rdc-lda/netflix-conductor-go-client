@@ -14,8 +14,8 @@
 package main
 
 import (
-	conductor "github.com/rdc/netflix-conductor-client"
-	"github.com/rdc/netflix-conductor-client/task/sample"
+	conductor "github.com/rdc-lda/netflix-conductor-go-client"
+	"github.com/rdc-lda/netflix-conductor-go-client/task/sample"
 )
 
 func main() {

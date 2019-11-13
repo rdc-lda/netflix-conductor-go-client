@@ -18,7 +18,7 @@ import (
 	"os"
 	"time"
 
-	"github.com/rdc/netflix-conductor-client/task"
+	"github.com/rdc-lda/netflix-conductor-go-client/task"
 )
 
 var (
