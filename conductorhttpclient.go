@@ -16,6 +16,7 @@ package conductor
 import (
 	"fmt"
 	"log"
+	"net/url"
 	"strconv"
 
 	"github.com/rdc-lda/netflix-conductor-go-client/httpclient"
@@ -268,13 +269,13 @@ func (c *ConductorHttpClient) GetWorkflow(workflowId string, includeTasks bool) 
 
 // Extension added by RDC, Lda.
 func (c *ConductorHttpClient) SearchWorkflowByQuery(queryString string, resultSize int) (string, error) {
-	url := c.httpClient.MakeUrl("/workflow/search")
+	searchURL := c.httpClient.MakeUrl("/workflow/search")
 
 	params := map[string]string{
-		"freeText": queryString,
+		"freeText": url.QueryEscape(queryString),
 		"size":     strconv.Itoa(resultSize),
 	}
-	outputString, err := c.httpClient.Get(url, params, nil)
+	outputString, err := c.httpClient.Get(searchURL, params, nil)
 	if err != nil {
 		log.Println("Error while trying to search for Workflows", queryString, err)
 		return "", err
