@@ -29,7 +29,7 @@ type ConductorHttpClient struct {
 func NewConductorHttpClient(baseUrl string) *ConductorHttpClient {
 	conductorClient := new(ConductorHttpClient)
 	headers := map[string]string{"Content-Type": "application/json", "Accept": "application/json"}
-	httpClient := httpclient.NewHttpClient(baseUrl, headers, true)
+	httpClient := httpclient.NewHttpClient(baseUrl, headers, false)
 	conductorClient.httpClient = httpClient
 	return conductorClient
 }
