@@ -266,6 +266,22 @@ func (c *ConductorHttpClient) GetWorkflow(workflowId string, includeTasks bool) 
 	}
 }
 
+// Extension added by RDC, Lda.
+func (c *ConductorHttpClient) SearchWorkflowByQuery(queryString string, resultSize int) (string, error) {
+	url := c.httpClient.MakeUrl("/workflow/search")
+
+	params := map[string]string{
+		"freeText": queryString,
+		"size":     string(resultSize),
+	}
+	outputString, err := c.httpClient.Get(url, params, nil)
+	if err != nil {
+		log.Println("Error while trying to search for Workflows", queryString, err)
+		return "", err
+	}
+	return outputString, nil
+}
+
 func (c *ConductorHttpClient) GetRunningWorkflows(workflowName string, version int, startTime float64, endTime float64) (string, error) {
 	url := c.httpClient.MakeUrl("/workflow/running/{workflowName}", "{workflowName}", workflowName)
 	versionString := "1"

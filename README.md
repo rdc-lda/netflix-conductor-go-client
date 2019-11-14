@@ -13,7 +13,7 @@ Go must be installed and `GOPATH` env variable set.
 
 ~~~bash
 # Fetch the module
-go get github.com/rdc/netflix-conductor-client
+go get github.com/rdc-lda/netflix-conductor-go-client
 ~~~
 
 This will create a Go project under `$GOPATH/src` and download any dependencies.
@@ -21,7 +21,7 @@ This will create a Go project under `$GOPATH/src` and download any dependencies.
 ## Run
 
 ~~~bash
-go run $GOPATH/src/rdc/netflix-conductor-client/startclient/startclient.go
+go run $GOPATH/src/github.com/rdc-lda/netflix-conductor-go-client/startclient/startclient.go
 ~~~
 
 ## Using Workflow Management API
