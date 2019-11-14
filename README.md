@@ -34,7 +34,7 @@ Go struct `ConductorHttpClient` provides client API calls to the conductor serve
 package main
 
 import (
-    conductor "github.com/rdc/netflix-conductor-client"
+    conductor "github.com/rdc-lda/netflix-conductor-go-client"
 )
 
 func main() {
@@ -98,8 +98,8 @@ Then main application to utilize these workers
 package main
 
 import (
-    "github.com/rdc/netflix-conductor-client"
-    "github.com/rdc/netflix-conductor-client/task/sample"
+    "github.com/rdc-lda/netflix-conductor-go-client"
+    "github.com/rdc-lda/netflix-conductor-go-client/task/sample"
 )
 
 func main() {
