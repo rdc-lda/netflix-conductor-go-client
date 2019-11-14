@@ -272,7 +272,7 @@ func (c *ConductorHttpClient) SearchWorkflowByQuery(queryString string, resultSi
 
 	params := map[string]string{
 		"freeText": queryString,
-		"size":     string(resultSize),
+		"size":     strconv.Itoa(resultSize),
 	}
 	outputString, err := c.httpClient.Get(url, params, nil)
 	if err != nil {
