@@ -284,6 +284,23 @@ func (c *ConductorHttpClient) SearchWorkflowByQuery(queryString string, offset i
 	return outputString, nil
 }
 
+func (c *ConductorHttpClient) RemoveWorkflow(workflowId string, archiveWf bool) (string, error) {
+	url := c.httpClient.MakeUrl("/workflow/{workflowId}/remove", "{workflowId}", workflowId)
+
+	archiveWfString := "false"
+	if archiveWf {
+		archiveWfString = "true"
+	}
+	params := map[string]string{"archiveWorkflow": archiveWfString}
+	outputString, err := c.httpClient.Delete(url, params, nil, "")
+	if err != nil {
+		log.Println("Error while trying to Remove Workflow", workflowId, err)
+		return "", err
+	}
+	return outputString, nil
+
+}
+
 func (c *ConductorHttpClient) GetRunningWorkflows(workflowName string, version int, startTime float64, endTime float64) (string, error) {
 	url := c.httpClient.MakeUrl("/workflow/running/{workflowName}", "{workflowName}", workflowName)
 	versionString := "1"
