@@ -284,6 +284,7 @@ func (c *ConductorHttpClient) SearchWorkflowByQuery(queryString string, offset i
 	return outputString, nil
 }
 
+// Extension added by RDC, Lda.
 func (c *ConductorHttpClient) RemoveWorkflow(workflowId string, archiveWf bool) (string, error) {
 	url := c.httpClient.MakeUrl("/workflow/{workflowId}/remove", "{workflowId}", workflowId)
 
